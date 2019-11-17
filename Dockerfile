@@ -14,6 +14,7 @@ WORKDIR /usr/src/api
 RUN echo "unsafe-perm = true" >> ~/.npmrc
 
 RUN apk add --no-cache \
+  pkgconfig \
   autoconf \
   automake \
   gcc \
@@ -21,7 +22,8 @@ RUN apk add --no-cache \
   libtool \
   make \
   nasm \
-  zlib-dev
+  zlib-dev \
+  build-base
 
 RUN npm install -g strapi@beta
 
